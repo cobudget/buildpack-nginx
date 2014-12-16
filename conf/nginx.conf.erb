@@ -15,5 +15,9 @@ http {
     server_name  _;
     root /app/www;
     index index.html;
+
+    location / {
+      rewrite ^(.*/[^/]+\.[^/]+)$ /index.html last;
+    }
   }
 }
